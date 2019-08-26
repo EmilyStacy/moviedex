@@ -4,7 +4,7 @@ const express = require('express');
 const morgan = require('morgan');
 const app = express();
 const movieData = require('./movies-data.json');
-const morganSetting = process.env.NODE_ENV === "production"?"tiny":"common";
+const morganSetting = process.env.NODE_ENV === 'production'?'tiny':'common';
 app.use(morgan(morganSetting));
 app.use(cors());
 app.use(function validateBearerToken(req,res,next){
