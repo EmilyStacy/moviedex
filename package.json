@@ -10,6 +10,9 @@
     "test": "mocha"
   },
   "keywords": [],
+  "engines": {
+    "node": "10.16.1"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
