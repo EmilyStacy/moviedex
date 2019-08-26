@@ -49,7 +49,7 @@ app.get('/movie',function getMovie(req,res) {
 })
 
 app.use((error,req,res,next)=> {
-    if(process.env.NODE.ENV === 'production') {
+    if(process.env.NODE_ENV === 'production') {
         response = {error:{message:"server error"}}
     }else {
         response = {error}
