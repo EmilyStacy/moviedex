@@ -58,10 +58,9 @@ app.use((error,req,res,next)=> {
     res.status(500).json(response)
 })
 
-const HOST = '0.0.0.0';
 const PORT = process.env.PORT || 8000;
 console.log('port is',PORT)
-app.listen(PORT,HOST,()=> {
+app.listen(PORT,"0.0.0.0",()=> {
     console.log('server started');
     // console.log(`Server listening at http://localhost:${PORT}`);
 })
