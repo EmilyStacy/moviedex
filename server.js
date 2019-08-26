@@ -15,13 +15,7 @@ app.use(function validateBearerToken(req,res,next){
     }
     next()
 }) 
-app.use((error,req,res,next)=> {
-    if(process.env.NODE.ENV === 'production') {
-        response = {error:{message:"server error"}}
-    }else {
-        response = {error}
-    }
-})
+
 app.get('/movie',function getMovie(req,res) {
     let response = movieData;
     //question:I wanted to ban empty string but it didn't work and caused problems
@@ -52,6 +46,15 @@ app.get('/movie',function getMovie(req,res) {
         //     } );
 }
     res.json(response);
+})
+
+app.use((error,req,res,next)=> {
+    if(process.env.NODE.ENV === 'production') {
+        response = {error:{message:"server error"}}
+    }else {
+        response = {error}
+    }
+    res.status(500).json(response)
 })
 
 const PORT = process.env.PORT || 8000;
