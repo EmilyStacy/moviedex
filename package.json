@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "debug": "nodemon server.js",
+    "dev": "nodemon server.js",
     "predeploy":"npm audit",
     "deploy":"git push heroku master",
-    "dev": "nodemon server",
     "test": "mocha"
   },
   "keywords": [],
