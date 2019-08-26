@@ -59,7 +59,7 @@ app.use((error,req,res,next)=> {
 })
 
 const HOST = '0.0.0.0';
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT;
 console.log('port is',PORT)
 app.listen(PORT,HOST,()=> {
     console.log('server started');
